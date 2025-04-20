@@ -85,16 +85,25 @@ float fbm(vec2 p) {
 // Main compute shader function
 void main() {
     // Get the current pixel coordinate
-    
+    ivec2 pixel_coords = ivec2(gl_GlobalInvocationID.xy);
+
     // Get image dimensions
-    
+    ivec2 img_size = imageSize(height_map);
+
     // Check if we're within the image bounds
-    
+    if (pixel_coords.x >= img_size.x || pixel_coords.y >= img_size.y) {
+        return;
+    }
+
     // Calculate the sample position
-        
-    // Apply additional seed offset to sample position
-        
-    // Generate noise value (0 to 1)
+    vec2 uv = vec2(pixel_coords) * noise_params.noise_scale;
     
+    // Apply additional seed offset to sample position
+    uv += noise_params.offset + float(noise_params.seed);
+    
+    // Generate noise value (0 to 1)
+    float height = fbm(uv);
+
     // Write the height value to the image
+    imageStore(height_map, pixel_coords, vec4(height, 0.0, 0.0, 1.0));
 }
