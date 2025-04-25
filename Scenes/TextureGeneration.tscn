@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hf28p646oj7l"]
 
-[ext_resource type="Script" uid="uid://b3fdd5tcsq37g" path="res://Scenes/ComputeTextureGenerator.cs" id="1_ak44p"]
-[ext_resource type="Script" uid="uid://igxft7k8ty3j" path="res://Scenes/OrbitCamera.cs" id="2_ak44p"]
+[ext_resource type="Script" path="res://Scenes/ComputeTextureGenerator.cs" id="1_ak44p"]
+[ext_resource type="Script" path="res://Scenes/OrbitCamera.cs" id="2_ak44p"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qvpo0"]
 

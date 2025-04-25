@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2kq4cmuv0esk"]
 
-[ext_resource type="Script" uid="uid://c3jui00sreqhi" path="res://Scenes/TerrainGenerator.cs" id="1_5u1dk"]
-[ext_resource type="Script" uid="uid://igxft7k8ty3j" path="res://Scenes/OrbitCamera.cs" id="1_enlwa"]
-[ext_resource type="Script" uid="uid://dxxjbudafuwhm" path="res://Scenes/TextureGeneration.cs" id="3_xbfor"]
-[ext_resource type="Script" uid="uid://b3fdd5tcsq37g" path="res://Scenes/ComputeTextureGenerator.cs" id="4_0gutl"]
+[ext_resource type="Script" path="res://Scenes/TerrainGenerator.cs" id="1_5u1dk"]
+[ext_resource type="Script" path="res://Scenes/OrbitCamera.cs" id="1_enlwa"]
+[ext_resource type="Script" path="res://Scenes/TextureGeneration.cs" id="3_xbfor"]
+[ext_resource type="Script" path="res://Scenes/ComputeTextureGenerator.cs" id="4_0gutl"]
 
 [node name="TerrainGenerator" type="Node3D" node_paths=PackedStringArray("_mesh")]
 script = ExtResource("1_5u1dk")
@@ -23,5 +23,6 @@ script = ExtResource("1_enlwa")
 [node name="TextureGenerator" type="Node3D" parent="."]
 script = ExtResource("3_xbfor")
 
-[node name="ComputeTextureGenerator" type="Node3D" parent="."]
+[node name="ComputeTextureGenerator" type="Node3D" parent="." node_paths=PackedStringArray("Mesh")]
 script = ExtResource("4_0gutl")
+Mesh = NodePath("../MeshInstance3D")
